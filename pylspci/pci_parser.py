@@ -192,7 +192,7 @@ class PCIDevice(object):
     @property
     def subsystem(self) -> typing.Optional[str]:
         result = None
-        for line in self.capabilities:
+        for line in self.data:
             if 'Subsystem:' in line:
                 result = line.split('Subsystem:')[-1].strip()
         return result
